@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoC Realm - Noticias, Torneos y Estrategias de Clash of Clans</title>
+    
+    <!-- Metadatos SEO Avanzados -->
+    <meta name="description" content="El portal definitivo de Clash of Clans. Noticias eSports, estrategias para Town Hall, videos de ataques y nuevos eventos.">
+    <meta name="keywords" content="Clash of Clans, CoC eSports, Town hall Estrategias, Bases, CoC Videos, Eventos CoC, Aldeas Clash of Clans">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fuentes y Fuentes de Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Librería Three.js para la escena 3D Interactiva de Entrada -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #080b10;
+            --card-bg: #111622;
+            --accent-gold: #ffb703;
+            --accent-cyan: #00f0ff;
+            --accent-crimson: #ff0055;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 240, 255, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .font-tech {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Hero 3D Impresionante (Tema CoC / Gaming) */
+        #hero-3d-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle at center, #1a233a 0%, #080b10 100%);
+            overflow: hidden;
+        }
+
+        #webgl-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, rgba(8,11,16,0.3) 0%, rgba(8,11,16,0.85) 90%);
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #fff;
+            text-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+            margin-bottom: 10px;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+        }
+
+        .btn-action {
+            background: linear-gradient(45deg, var(--accent-crimson), var(--accent-gold));
+            color: #fff;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 183, 3, 0.9);
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.9; text-shadow: 0 0 15px var(--accent-cyan); }
+            100% { opacity: 1; text-shadow: 0 0 35px var(--accent-cyan), 0 0 10px var(--accent-crimson); }
+        }
+
+        /* Layout Principal */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Navegación Fija */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 22, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Banner Publicitario (Monetag) */
+        .ad-placeholder {
+            background: linear-gradient(90deg, #182232, #0d131d);
+            border: 1px dashed var(--accent-cyan);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Grid de Artículos */
+        .section-header {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 15px;
+            margin: 50px 0 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Enlaces envolventes para las tarjetas */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+        }
+
+        /* Contenedor de Imagen con Placeholder */
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background-color: #1a2234;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .card-excerpt {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 15px;
+        }
+
+        /* Panel de Videos de CoC */
+        .video-panel {
+            background: linear-gradient(135deg, #111622 0%, #1a2234 100%);
+            border: 1px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 60px 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background: #080b10;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #182232;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .play-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            opacity: 0.8;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover .play-icon {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        footer {
+            background: #040608;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="nav-wrapper">
+            <div class="logo-text font-tech">
+                <i class="fa-solid fa-shield-halved"></i> CoC REALM
+            </div>
+            <ul class="nav-links">
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#esports">eSports</a></li>
+                <li><a href="#videos">Videos CoC</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Presentación 3D Interactiva -->
+    <section id="hero-3d-container">
+        <canvas id="webgl-canvas"></canvas>
+        <div class="hero-overlay">
+            <h1 class="hero-title font-tech">COC REALM GAMING</h1>
+            <p class="hero-subtitle">Noticias de Torneos, Guías de Ataque para Town Hall y Cobertura de Eventos de Clash of Clans.</p>
+            
+            <button class="btn-action font-tech" onclick="scrollToArticles()">
+                <i class="fa-solid fa-fire"></i> EXPLORAR ARTÍCULOS
+            </button>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Espacio publicitario listo para Monetag -->
+        <div class="ad-placeholder font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ANUNCIO MONETAG (COLOCAR CÓDIGO DE SCRIPT AQUÍ)
+        </div>
+
+        <!-- SECCIÓN DE ARTÍCULOS -->
+        <div class="section-header" id="articulos">
+            <h2 class="section-title">Últimas Publicaciones</h2>
+            <span style="color: var(--accent-cyan);">5 Artículos Publicados</span>
+        </div>
+
+        <div class="blog-grid">
+
+            <!-- ARTÍCULO 1: XIYAN GANADOR DEL TORNEO -->
+            <a href="championship" class="card-link" id="esports">
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://i.ytimg.com/vi/TWKzDB_Etyw/hqdefault.jpg" alt="Xiyan Ganador Torneo Clash of Clans" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">eSports CoC</span>
+                        <h3 class="card-title font-tech">¡Xiyan Gana el Torneo Mundial de Clash of Clans!</h3>
+                        <p class="card-excerpt">Análisis de la gran final donde Xiyan se coronó campeón demostrando ejecuciones perfectas y estrategias impecables en cada aldea.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
+                            <span style="color: var(--accent-gold);"><i class="fa-solid fa-trophy"></i> Torneo Mundial</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- ARTÍCULO 5: OPTIMIZACIÓN Y TRUCOS COC -->
+            <a href="gemas" class="card-link">
+                <article class="card">
+                    <div class="card-body">
+                        <div class="card-img-wrapper" style="margin: -25px -25px 25px -25px;">
+                            <img src="https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg" alt="Trucos de Recursos CoC" class="card-img">
+                        </div>
+                        <span class="card-tag">Gestión de Cuenta</span>
+                        <h3 class="card-title font-tech">Cómo Optimizar tus Constructores y Gemas al Máximo</h3>
+                        <p class="card-excerpt">Paso a paso para avanzar la aldea sin gastar dinero real aprovechando los objetos mágicos y la aldea nocturna.</p>
+                        <div class="card-meta">
+                            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
+                            <span><i class="fa-solid fa-hammer"></i> Guía F2P</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+        </div>
+
+        <!-- SECCIÓN DE VIDEOS COC -->
+        <div class="video-panel" id="videos">
+            <div class="section-header" style="margin: 0 0 20px 0;">
+                <h2 class="section-title"><i class="fa-solid fa-play" style="color: var(--accent-gold);"></i> Panel de Videos CoC</h2>
+            </div>
+            <p style="color: var(--text-muted);">Revisa las repeticiones de torneos, ataques destacados y análisis del juego.</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-brands fa-youtube play-icon"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="font-tech" style="font-size: 1rem;">Xiyan vs Finalista: Ataque Decisivo</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Análisis segundo a segundo del ataque ganador.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-brands fa-youtube play-icon"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="font-tech" style="font-size: 1rem;">Estrategia de Dragones Eléctricos TH16</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Aprende a embotellar las defensas clave.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fa-brands fa-youtube play-icon"></i>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="font-tech" style="font-size: 1rem;">Resumen de Eventos de Temporada</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Todo lo que debes saber del nuevo pase de batalla.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Contacto</a>
+        </div>
+        <p>&copy; 2026 CoC Realm - Blog Monetizable en GitHub Pages</p>
+    </footer>
+
+    <!-- Scripts de la Intro 3D y Desplazamiento Suave -->
+    <script>
+        function scrollToArticles() {
+            const articleSection = document.getElementById('articulos');
+            if (articleSection) {
+                articleSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        const canvas = document.getElementById('webgl-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const geometry = new THREE.OctahedronGeometry(2.2, 0);
+        const material = new THREE.MeshPhongMaterial({
+            color: 0x00f0ff,
+            emissive: 0x001122,
+            wireframe: true,
+            shininess: 100
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        const ringGeo = new THREE.TorusGeometry(3.5, 0.04, 16, 100);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xffb703, wireframe: true });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.rotation.x = Math.PI / 3;
+        scene.add(ringMesh);
+
+        const particlesCount = 500;
+        const posArray = new Float32Array(particlesCount * 3);
+        for(let i=0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 18;
+        }
+
+        const particlesGeo = new THREE.BufferGeometry();
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMat = new THREE.PointsMaterial({ size: 0.03, color: 0xff0055 });
+        const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
+        scene.add(particlesMesh);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffb703, 2, 50);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        camera.position.z = 6;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            mesh.rotation.x += 0.005;
+            mesh.rotation.y += 0.008;
+
+            ringMesh.rotation.z -= 0.004;
+            particlesMesh.rotation.y += 0.0005;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

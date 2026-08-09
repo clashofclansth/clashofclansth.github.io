@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis: ¿Cómo ganó Xiyan el Torneo Mundial? - CoC Realm</title>
+    
+    <!-- Metadatos SEO -->
+    <meta name="description" content="Análisis táctico completo de la victoria de Xiyan en el Torneo Mundial de Clash of Clans: composición de ejércitos, equipamiento de héroes y repetición en video.">
+    <meta name="keywords" content="Xiyan Clash of Clans, Torneo Mundial CoC, Estrategia TH16, Ataque Xiyan, eSports CoC">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #080b10;
+            --card-bg: #111622;
+            --accent-gold: #ffb703;
+            --accent-cyan: #00f0ff;
+            --accent-crimson: #ff0055;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 240, 255, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .font-tech {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Navegación */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 22, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-back {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .btn-back:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Contenedor del Artículo */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Encabezado del Artículo */
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 20px;
+        }
+
+        /* Banner Principal / Imagen Destacada */
+        .featured-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-glow);
+            margin-bottom: 35px;
+        }
+
+        /* Contenido del Texto */
+        .article-content p {
+            font-size: 1.15rem;
+            margin-bottom: 22px;
+            color: #d1d5db;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin: 40px 0 18px 0;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+        }
+
+        /* Cita / Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 183, 3, 0.05), rgba(0, 240, 255, 0.05));
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        /* Tabla de Estadísticas de la Final */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 12px 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stats-table th {
+            background-color: rgba(0, 240, 255, 0.1);
+            color: var(--accent-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Contenedor del Video de YouTube */
+        .video-section {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .video-title {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .responsive-video {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .responsive-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Espacio para Anuncio */
+        .ad-banner {
+            background: #0e1420;
+            border: 1px dashed var(--accent-cyan);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 30px 0;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: #040608;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .featured-image { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="nav-wrapper">
+            <a href="../" class="logo-text font-tech">
+                <i class="fa-solid fa-shield-halved"></i> CoC REALM
+            </a>
+            <a href="../" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <main class="article-container">
+
+        <!-- Encabezado del Artículo -->
+        <header class="article-header">
+            <span class="article-tag font-tech"><i class="fa-solid fa-trophy"></i> CoC eSports</span>
+            <h1 class="article-title font-tech">¡Xiyan Campeón Mundial! Análisis Táctico de la Gran Final de Clash of Clans</h1>
+            <div class="article-meta">
+                <span><i class="fa-regular fa-user"></i> Redacción CoC Realm</span>
+                <span><i class="fa-regular fa-calendar"></i> 2026</span>
+                <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
+            </div>
+        </header>
+
+        <!-- Imagen Destacada -->
+        <img src="https://i.ytimg.com/vi/TWKzDB_Etyw/hqdefault.jpg" alt="Xiyan Levantando el Trofeo de Clash of Clans" class="featured-image">
+
+        <!-- Bloque Publicitario Superior -->
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (INSERTA TU SCRIPT AQUÍ)
+        </div>
+
+        <!-- Cuerpo del Artículo -->
+        <article class="article-content">
+            <p>La Gran Final del Torneo Mundial de Clash of Clans ha concluido con una de las actuaciones más memorables en la historia del juego competitivo. <strong>Xiyan</strong> logró coronarse campeón tras superar una serie extremadamente ajustada, donde la precisión en el tiempo y el control del metagame fueron los factores determinantes.</p>
+
+            <h2>1. El Dominio del Mago de Invisibilidad (Invisibility Spell Walk)</h2>
+            <p>Una de las claves principales en la victoria de Xiyan fue su uso impecable del hechizo de invisibilidad combinado con la Reina Arquera y los Rompemuros de testeo. En lugar de arriesgar entradas directas hacia el Centro de la Aldea (Town Hall 18), Xiyan aseguró embudos limpios eliminando defensas de alto impacto como la Torre de Monolito y la Torre Vengativa, haciendo una entrada legendaria con todos los heroes.</p>
+
+            <div class="highlight-box">
+                <h3 class="font-tech"><i class="fa-solid fa-lightbulb"></i> Clave Táctica del Campeón</h3>
+                <p>Xiyan mantuvo un promedio de **tiempo restante de 48 segundos** por ataque, lo que demuestra que su victoria no solo se basó en conseguir las 3 estrellas, sino en la velocidad de ejecución para romper empates por porcentaje y tiempo.</p>
+            </div>
+
+            <h2>2. Elección Estratégica de Equipamiento de Héroes</h2>
+            <p>El meta actual de Town Hall 18 exige combinaciones exactas en el equipamiento de héroes. La configuración utilizada por Xiyan durante las rondas finales incluyó:</p>
+
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Héroe</th>
+                        <th>Equipamiento Principal</th>
+                        <th>Equipamiento Secundario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rey Bárbaro</strong></td>
+                        <td>Guantelete Gigante</td>
+                        <td>Vial de Rabia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reina Arquera</strong></td>
+                        <td>Flecha Congelante</td>
+                        <td>Invisibilidad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gran Centinela</strong></td>
+                        <td>Gema de Curación</td>
+                        <td>Tomo Eterno</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Luchadora Real</strong></td>
+                        <td>Escudo Buscador</td>
+                        <td>Gema de Celeridad</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3. Gestión bajo Presión y Diseños Antimeta</h2>
+            <p>En el ámbito defensivo, las aldeas presentadas por Xiyan lograron frenar 2 de los 5 ataques de su rival a 2 estrellas y un 94% de destrucción. Al mover trampas de esqueleto y bombas aéreas cerca de los compartimentos exteriores, desbarató las estrategias habituales de Superdragones y Esbirros.</p>
+
+            <!-- SECCIÓN DEL VIDEO DE YOUTUBE CON SU ANÁLISIS -->
+            <section class="video-section">
+                <h2 class="video-title font-tech"><i class="fa-brands fa-youtube" style="color: var(--accent-crimson);"></i> Video Análisis Completo</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Mira la repetición de los mejores ataques y el desglose jugada por jugada a continuación:</p>
+                
+                <div class="responsive-video">
+                    <!-- REEMPLAZA EL ENLACE 'src' CON TU VIDEO DE YOUTUBE -->
+                    <!-- Ejemplo: https://www.youtube.com/embed/TU_ID_DE_VIDEO -->
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=IxMWPEu7090" 
+                        title="Análisis del ataque de Xiyan en Clash of Clans" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <h2>Conclusión</h2>
+            <p>La victoria de Xiyan reafirma la importancia de adaptarse a las constantes actualizaciones de balance y demuestra que el control de héroes junto al timming perfecto son la máxima prioridad en el Clash of Clans eSports de nivel profesional.</p>
+        </article>
+
+        <!-- Bloque Publicitario Inferior -->
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (INSERTA TU SCRIPT AQUÍ)
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CoC Realm - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

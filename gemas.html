@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Gemas Mensuales en Clash of Clans - CoC Realm</title>
+    
+    <!-- Metadatos SEO -->
+    <meta name="description" content="Aprende cómo conseguir más de 1,600 gemas gratis al mes en Clash of Clans utilizando las ofertas del Mercader, Medallas de Asalto, Mina de Gemas y Ligas de Guerra.">
+    <meta name="keywords" content="Gemas Clash of Clans, Farmear Gemas CoC, Medallas de Asalto Gemas, Mercader CoC, Guia F2P Clash of Clans">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #080b10;
+            --card-bg: #111622;
+            --accent-gold: #ffb703;
+            --accent-cyan: #00f0ff;
+            --accent-crimson: #ff0055;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 240, 255, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .font-tech {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Navegación */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 22, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-back {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .btn-back:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Contenedor del Artículo */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(255, 183, 3, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 2.3rem;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 20px;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-glow);
+            margin-bottom: 35px;
+        }
+
+        .article-content p {
+            font-size: 1.15rem;
+            margin-bottom: 22px;
+            color: #d1d5db;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            color: var(--accent-cyan);
+            margin: 40px 0 18px 0;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 183, 3, 0.05));
+            border: 1px solid var(--accent-cyan);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        /* Tabla de Cálculo Mensual */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 12px 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stats-table th {
+            background-color: rgba(255, 183, 3, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .total-row {
+            background-color: rgba(0, 240, 255, 0.15);
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Banner Publicitario */
+        .ad-banner {
+            background: #0e1420;
+            border: 1px dashed var(--accent-cyan);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 30px 0;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: #040608;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+            .stats-table th, .stats-table td { padding: 8px 10px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+<header>
+    <div class="nav-wrapper">
+        <a href="../index.html" class="logo-text font-tech">
+            <i class="fa-solid fa-shield-halved"></i> CoC REALM
+        </a>
+        <a href="../index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+        </a>
+    </div>
+</header> <!-- Asegúrate de que </header> se cierre AQUÍ MISMAS -->
+
+<main class="article-container">
+
+    <!-- El título va dentro de un <section> o <div> en lugar de otro <header> -->
+    <div class="article-header">
+        <span class="article-tag font-tech"><i class="fa-solid fa-gem"></i> Guía F2P de Recursos</span>
+        <h1 class="article-title font-tech">Matemática de Gemas: Cómo Farmear +1,600 Gemas Gratis al Mes en Clash of Clans</h1>
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Redacción CoC Realm</span>
+            <span><i class="fa-regular fa-calendar"></i> 2026</span>
+            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
+        </div>
+    </div>
+        <!-- Imagen Destacada -->
+        <img src="https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg" alt="Mina de Gemas y Mercader Clash of Clans" class="featured-image">
+
+        <!-- Banner Publicitario Monetag -->
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (COLOCAR CÓDIGO DE SCRIPT AQUÍ)
+        </div>
+
+        <!-- Contenido -->
+        <article class="article-content">
+            <p>Las gemas son el recurso más codiciado en <strong>Clash of Clans</strong>. Ya sea para desbloquear a los constructores, subir el nivel del Aprendiz de Constructor o comprar Libros de Héroes, guardarlas es vital para progresar rápido sin gastar dinero real. Muchos jugadores creen que las gemas solo se consiguen lentamente, pero combinando todos los métodos del juego puedes acumular **más de 1,600 gemas cada mes**.</p>
+
+            <h2>1. Estrategia de Medallas de Asalto (Capital de Clan)</h2>
+            <p>Los fines de semana de asalto son la fuente secreta número uno para convertir medallas en gemas directas. Durante el mes hay **4 actualizaciones del Mercader** (una por semana). Si tu clan consigue unas 1,200 - 1,500 medallas por fin de semana, haz esta rutina cada semana:</p>
+            <ul>
+                <li><strong>Comprar y vender pociones:</strong> Compra 3 Pociones de Entrenamiento (100 medallas c/u) y 3 Pociones de la Torre del Reloj (100 medallas c/u). Véndelas todas en la aldea por 10 gemas cada una = **60 gemas a la semana**.</li>
+                <li><strong>Anillos de Muros:</strong> Compra los paquetes de Anillos de Muros con las medallas sobrantes y véndelos para conseguir hasta **75 gemas adicionales a la semana**.</li>
+            </ul>
+            <p><em>Resultado: **~540 a 600 gemas al mes** solo con el Mercader y las Medallas de Asalto.</em></p>
+
+            <h2>2. Limpieza de Obstáculos y Cajas de Gemas</h2>
+            <p>Los obstáculos reaparecen cada 8 horas entre la Aldea Principal y la Base del Constructor. En promedio, cada obstáculo eliminado otorga 2 gemas. Si mantienes las dos aldeas limpias de vegetación:</p>
+            <ul>
+                <li><strong>Obstáculos diarios (ambas aldeas):</strong> ~12 gemas al día = **360 gemas al mes**.</li>
+                <li><strong>Caja de Gemas:</strong> Aparece aproximadamente una vez a la semana, dándote 25 gemas cada una = **100 gemas al mes**.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3 class="font-tech"><i class="fa-solid fa-vault"></i> Mina de Gemas y Torre del Reloj</h3>
+                <p>Una <strong>Mina de Gemas maxeada</strong> en la Base del Constructor genera 5 gemas diarias. Al acelerarla con la Torre del Reloj todos los días, obtendrás un promedio firme de **180 gemas al mes** sin hacer ningún esfuerzo.</p>
+            </div>
+
+            <h2>3. Conversión en Liga de Guerras de Clanes (CWL) y Juegos de Clan</h2>
+            <p>Al finalizar los Juegos de Clan mensuales y la CWL, acumulas pases y recompensas. Si tu prioridad absoluta son las gemas en lugar de los recursos para construcciones:</p>
+            <ul>
+                <li><strong>Juegos de Clan:</strong> Vendiendo los objetos mágicos duplicados o de menor prioridad (Pociones de Recursos, Anillos, Libros repetidos) ganas aproximadamente **200 a 300 gemas**.</li>
+                <li><strong>Medallas de Liga (CWL):</strong> Comprar Pociones de Entrenamiento en la Tienda de Liga para venderlas por gemas a razón de 1 Medalla = 1 Gema. (Con 150 medallas obtienes **150 gemas**).</li>
+            </ul>
+
+            <h2>Resumen del Farmeo Mensual Estimado (F2P)</h2>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Fuente de Gemas</th>
+                        <th>Frecuencia</th>
+                        <th>Gemas Promedio / Mes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mercader (Medallas de Asalto)</td>
+                        <td>4 Semanas / Mes</td>
+                        <td>~540 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td>Limpieza de Obstáculos + Cajas</td>
+                        <td>Diario / Semanal</td>
+                        <td>~460 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td>Mina de Gemas + Torre del Reloj</td>
+                        <td>Diario</td>
+                        <td>~180 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td>Juegos de Clan (Venta de Objetos)</td>
+                        <td>1 vez al Mes</td>
+                        <td>~250 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td>Pase de Temporada Gratuito (Plata)</td>
+                        <td>1 vez al Mes</td>
+                        <td>~90 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td>Tienda Web Oficial de Supercell (Recompensa)</td>
+                        <td>Mensual</td>
+                        <td>~100 Gemas</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>TOTAL ESTIMADO GANADO</td>
+                        <td>Mensual</td>
+                        <td>+1,620 GEMAS</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Consejo Final: ¿En qué conviene gastarlas?</h2>
+            <p>Ahora que sabes cómo farmear más de 1,600 gemas al mes, no las gastes acelerando construcciones pequeñas. Inviértelas primero en comprar los **5 Constructores**, luego sube de nivel al **Aprendiz de Constructor** o guarda 500 gemas para comprar **Libros de Héroes** en la tienda cuando los tiempos de mejora superen los 7 días.</p>
+        </article>
+
+        <!-- Banner Publicitario Inferior -->
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (COLOCAR CÓDIGO DE SCRIPT AQUÍ)
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CoC Realm - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

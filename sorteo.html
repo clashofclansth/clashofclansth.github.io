@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteo Pase de Batalla | Participa Gratis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .badge {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #f8fafc;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+    }
+    input:focus {
+      border-color: #ff4b2b;
+    }
+    .btn-participar {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s;
+    }
+    .btn-participar:hover {
+      transform: scale(1.02);
+    }
+    .live-info {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #a855f7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge"><i class="fa-solid fa-gift"></i> Sorteo Especial</span>
+    <h1>¡Gana un Pase de Batalla!</h1>
+    <p>Ingresa tus datos para registrarte. Elegiremos al ganador en vivo en TikTok.</p>
+
+    <!-- FORMULARIO CONECTADO A TU GOOGLE FORM -->
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSc.../formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" id="formSorteo">
+      
+      <!-- Reemplazaremos la URL dinámica con un script para garantizar que funcione sin errores de URL larga -->
+      
+      <div class="form-group">
+        <label for="username">ID o Nick de Jugador:</label>
+        <input type="text" id="username" name="entry.281936019" placeholder="Ej: User123#0000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tiktok">Tu usuario de TikTok (para verificar):</label>
+        <input type="text" id="tiktok" name="entry.349051690" placeholder="@tu_usuario" required>
+      </div>
+
+      <button type="submit" class="btn-participar">
+        <i class="fa-solid fa-ticket"></i> Confirmar Inscripción
+      </button>
+    </form>
+
+    <div class="live-info">
+      <i class="fa-brands fa-tiktok"></i> El resultado se dará en el LIVE de TikTok.
+    </div>
+  </div>
+
+  <!-- IFRAME OCULTO: Permite enviar los datos a Google Sheets sin sacar al usuario de tu web -->
+  <script type="text/javascript">
+    var submitted = false;
+    // Asigna la dirección exacta de envío de tu formulario de Google
+    document.getElementById('formSorteo').action = "https://docs.google.com/forms/u/0/d/1ctfJEIEzVA2PeiFgFEZO3ONihLzCfHJYirovpYW3puY/formResponse";
+  </script>
+  
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+  onload="if(submitted) { 
+    localStorage.setItem('participando_sorteo', 'true'); 
+    alert('¡Inscripción exitosa! Ya estás participando.'); 
+    window.location.href='index.html'; 
+  }">
+</iframe>
+
+</body>
+</html>

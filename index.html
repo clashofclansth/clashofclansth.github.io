@@ -7,7 +7,7 @@
     <title>CoC Realm - Noticias, Torneos y Estrategias de Clash of Clans</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta name='admaven-placement' content=BqdUFqHn7>
+    <meta name='admaven-placement' content='BqdUFqHn7'>
     
     <!-- Metadatos SEO Avanzados -->
     <meta name="description" content="El portal definitivo de Clash of Clans. Noticias eSports, estrategias para Town Hall, videos de ataques y nuevos eventos.">
@@ -58,7 +58,7 @@
             text-transform: uppercase;
         }
 
-        /* Hero 3D Impresionante (Tema CoC / Gaming) */
+        /* Hero 3D Impresionante */
         #hero-3d-container {
             position: relative;
             width: 100%;
@@ -141,7 +141,7 @@
             box-shadow: 0 0 40px rgba(255, 183, 3, 0.9);
         }
 
-        /* Botón del Sorteo dentro de la Hero section */
+        /* Botón del Sorteo */
         .btn-sorteo-animated {
             display: inline-flex;
             align-items: center;
@@ -229,7 +229,7 @@
             color: var(--accent-gold);
         }
 
-        /* Estilos de Redes Sociales */
+        /* Redes Sociales */
         .social-links {
             display: flex;
             justify-content: center;
@@ -475,7 +475,7 @@
         </div>
     </header>
 
-    <!-- Presentación 3D Interactiva (Hero Section) -->
+    <!-- Presentación 3D Interactiva -->
     <section id="hero-3d-container">
         <canvas id="webgl-canvas"></canvas>
         <div class="hero-overlay">
@@ -487,7 +487,6 @@
                     <i class="fa-solid fa-fire"></i> EXPLORAR ARTÍCULOS
                 </button>
 
-                <!-- BOTÓN DEL SORTEO (Integrado de forma limpia) -->
                 <div id="contenedor-sorteo">
                     <a href="Sorteo" class="btn-sorteo-animated font-tech">
                         <i class="fa-solid fa-gift"></i> PARTICIPA EN EL SORTEO <i class="fa-solid fa-fire"></i>
@@ -499,73 +498,19 @@
 
     <div class="container">
 
-        <!-- Espacio publicitario para Monetag -->
+        <!-- Banner Publicitario -->
         <div class="ad-placeholder font-tech">
             <i class="fa-solid fa-rectangle-ad"></i> ANUNCIO MONETAG (COLOCAR CÓDIGO DE SCRIPT AQUÍ)
         </div>
 
-        <!-- SECCIÓN DE ARTÍCULOS -->
+        <!-- SECCIÓN DE ARTÍCULOS DINÁMICOS -->
         <div class="section-header" id="articulos">
             <h2 class="section-title">Últimas Publicaciones</h2>
-            <span style="color: var(--accent-cyan);">3 Artículos Publicados</span>
+            <span id="articulo-count" style="color: var(--accent-cyan);">Cargando artículos...</span>
         </div>
 
-        <div class="blog-grid">
-
-            <!-- ARTÍCULO 1: XIYAN GANADOR DEL TORNEO -->
-            <a href="championship" class="card-link" id="esports">
-                <article class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://i.ytimg.com/vi/TWKzDB_Etyw/hqdefault.jpg" alt="Xiyan Ganador Torneo Clash of Clans" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">eSports CoC</span>
-                        <h3 class="card-title font-tech">¡Xiyan Gana el Torneo Mundial de Clash of Clans!</h3>
-                        <p class="card-excerpt">Análisis de la gran final donde Xiyan se coronó campeón demostrando ejecuciones perfectas y estrategias impecables en cada aldea.</p>
-                        <div class="card-meta">
-                            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
-                            <span style="color: var(--accent-gold);"><i class="fa-solid fa-trophy"></i> Torneo Mundial</span>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
-            <!-- ARTÍCULO 2: OPTIMIZACIÓN Y TRUCOS COC -->
-            <a href="gemas" class="card-link">
-                <article class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg" alt="Trucos de Recursos CoC" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">Gestión de Cuenta</span>
-                        <h3 class="card-title font-tech">Cómo Optimizar tus Constructores y Gemas al Máximo</h3>
-                        <p class="card-excerpt">Paso a paso para avanzar la aldea sin gastar dinero real aprovechando los objetos mágicos y la aldea nocturna.</p>
-                        <div class="card-meta">
-                            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
-                            <span><i class="fa-solid fa-hammer"></i> Guía F2P</span>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
-            <!-- ARTÍCULO 3: TH15 META -->
-            <a href="TH15Air" class="card-link">
-                <article class="card">
-                    <div class="card-img-wrapper">
-                        <img src="https://i.ytimg.com/vi/Uqfzco0V7-o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLClyQVgoRvYBgUT1Tn6mq10EGmxnA" alt="Mejor Ejercito Meta Actual Th15" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-tag">Estrategia TH15</span>
-                        <h3 class="card-title font-tech">Mejor Ejército Meta Actual TH15</h3>
-                        <p class="card-excerpt">El mejor ataque del meta actual para dominar tus guerras en TH15.</p>
-                        <div class="card-meta">
-                            <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
-                            <span><i class="fa-solid fa-shield-halved"></i> Estrategia</span>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
+        <div class="blog-grid" id="blog-grid">
+            <!-- Los artículos se renderizan desde articulos.json -->
         </div>
 
         <!-- SECCIÓN DE VIDEOS COC -->
@@ -611,18 +556,17 @@
     </div>
 
     <footer>
-        <!-- REDES SOCIALES EN EL FOOTER -->
         <div class="social-links">
-            <a href="https://www.tiktok.com/@proplayerzxrx777" target="_blank" rel="noopener" class="social-btn tiktok" title="TikTok">
+            <a href="https://www.tiktok.com/@tu_usuario" target="_blank" rel="noopener" class="social-btn tiktok" title="TikTok">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
-            <a href="https://www.youtube.com/@ProplayerzXRX?sub_confirmation=1" target="_blank" rel="noopener" class="social-btn youtube" title="YouTube">
+            <a href="https://youtube.com/@tu_canal?sub_confirmation=1" target="_blank" rel="noopener" class="social-btn youtube" title="YouTube">
                 <i class="fa-brands fa-youtube"></i>
             </a>
-            <a href="https://discord.com/invite/QdwayK5JHx" target="_blank" rel="noopener" class="social-btn discord" title="Discord">
+            <a href="https://discord.gg/tu_servidor" target="_blank" rel="noopener" class="social-btn discord" title="Discord">
                 <i class="fa-brands fa-discord"></i>
             </a>
-            <a href="https://www.twitch.tv/u/xzproplayerxx/home" target="_blank" rel="noopener" class="social-btn twitch" title="Twitch">
+            <a href="https://www.twitch.tv/tu_canal" target="_blank" rel="noopener" class="social-btn twitch" title="Twitch">
                 <i class="fa-brands fa-twitch"></i>
             </a>
         </div>
@@ -635,9 +579,8 @@
         <p>&copy; 2026 CoC Realm - Blog Monetizable en GitHub Pages</p>
     </footer>
 
-    <!-- SCRIPT DE INTERACCIÓN Y SORTEO -->
+    <!-- SCRIPTS -->
     <script>
-        // Oculta el botón de sorteo si ya participó
         document.addEventListener("DOMContentLoaded", function() {
             if (localStorage.getItem('participando_sorteo') === 'true') {
                 var contenedor = document.getElementById('contenedor-sorteo');
@@ -645,9 +588,72 @@
                     contenedor.style.display = 'none';
                 }
             }
+            cargarArticulos();
         });
 
-        // Scroll suave al hacer clic en Explorar Artículos
+        // Carga dinámica optimizada del JSON
+        function cargarArticulos() {
+            fetch('./articulos.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se pudo cargar el archivo articulos.json');
+                    }
+                    return response.json();
+                })
+                .then(articulos => {
+                    const contenedor = document.getElementById('blog-grid');
+                    const contador = document.getElementById('articulo-count');
+                    
+                    if (!contenedor) return;
+
+                    if (!articulos || articulos.length === 0) {
+                        contenedor.innerHTML = '<p style="color: var(--text-muted);">No hay artículos disponibles.</p>';
+                        if (contador) contador.innerText = '0 Artículos';
+                        return;
+                    }
+
+                    // Mapeo seguro con valores por defecto si falta algún campo en el JSON
+                    contenedor.innerHTML = articulos.map(art => {
+                        const url = art.url || '#';
+                        const imagen = art.imagen || 'https://via.placeholder.com/400x200?text=Sin+Imagen';
+                        const titulo = art.titulo || 'Título no disponible';
+                        const categoria = art.categoria || 'General';
+                        const resumen = art.resumen || '';
+                        const tiempoLectura = art.tiempoLectura || '3 min';
+                        const iconoCategoria = art.iconoCategoria || 'fa-newspaper';
+
+                        return `
+                            <a href="${url}" class="card-link">
+                                <article class="card">
+                                    <div class="card-img-wrapper">
+                                        <img src="${imagen}" alt="${titulo}" class="card-img" loading="lazy">
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="card-tag">${categoria}</span>
+                                        <h3 class="card-title font-tech">${titulo}</h3>
+                                        <p class="card-excerpt">${resumen}</p>
+                                        <div class="card-meta">
+                                            <span><i class="fa-regular fa-clock"></i> Lectura ${tiempoLectura}</span>
+                                            <span style="color: var(--accent-gold);"><i class="fa-solid ${iconoCategoria}"></i> ${categoria}</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        `;
+                    }).join('');
+
+                    if (contador) {
+                        contador.innerText = `${articulos.length} Artículos Publicados`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cargar artículos:', error);
+                    const contador = document.getElementById('articulo-count');
+                    if (contador) contador.innerText = 'Error al cargar artículos';
+                });
+        }
+
+        // Scroll suave
         function scrollToArticles() {
             const articleSection = document.getElementById('articulos');
             if (articleSection) {
@@ -655,7 +661,7 @@
             }
         }
 
-        // Configuración de la escena Three.js en 3D
+        // Escena 3D Three.js
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);

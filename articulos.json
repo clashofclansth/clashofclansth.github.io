@@ -1,0 +1,20 @@
+[
+  {
+    "url": "articulo-1.html",
+    "imagen": "https://via.placeholder.com/400x200",
+    "categoria": "Estrategia",
+    "titulo": "Mejores Ejércitos para TH16 en Guerra",
+    "resumen": "Descubre las combinaciones de tropas más efectivas para conseguir 3 estrellas en Ayuntamiento 16.",
+    "tiempoLectura": "5 min",
+    "iconoCategoria": "fa-shield-halved"
+  },
+  {
+    "url": "articulo-2.html",
+    "imagen": "https://via.placeholder.com/400x200",
+    "categoria": "eSports",
+    "titulo": "Resumen del Campeonato Mundial CoC",
+    "resumen": "Repaso de las jugadas maestras y los momentos más intensos de la gran final.",
+    "tiempoLectura": "4 min",
+    "iconoCategoria": "fa-trophy"
+  }
+]

@@ -821,5 +821,151 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       "description": "El portal definitivo de Clash of Clans. Noticias eSports, estrategias para Town Hall, sorteos de pases de batalla y videos de ataques."
     }
     </script>
+    <!-- Banner / Modal Anti-Adblock -->
+<div id="adblock-overlay" class="adblock-overlay">
+  <div class="adblock-modal">
+    <div class="adblock-icon">🛡️</div>
+    <h2>Detectamos un bloqueador de anuncios</h2>
+    <p>
+      Para mantener este sitio libre y en funcionamiento, mostramos algunos anuncios. 
+      Si prefieres una experiencia sin anuncios, considera apoyarnos.
+    </p>
+    
+    <div class="adblock-actions">
+      <a href="https://ko-fi.com/TU_USUARIO" target="_blank" class="btn-kofi">
+        ☕ Apoyar en Ko-fi
+      </a>
+      <button onclick="location.reload()" class="btn-refresh">
+        Ya desactivé AdBlock
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Pantalla de bloqueo completa */
+.adblock-overlay {
+  display: none; /* Se activa con JavaScript si detecta Adblock */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Caja modal */
+.adblock-modal {
+  background: #ffffff;
+  max-width: 440px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+}
+
+.adblock-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.adblock-modal h2 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.adblock-modal p {
+  margin: 0 0 24px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555555;
+}
+
+.adblock-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-kofi {
+  background-color: #ff5e5b;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-kofi:hover {
+  background-color: #ff4845;
+}
+
+.btn-refresh {
+  background-color: #f0f0f2;
+  color: #333333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-refresh:hover {
+  background-color: #e2e2e5;
+}
+</style>
+    <script>
+async function checkAdBlock() {
+  let adBlocked = false;
+
+  // Intento 1: Cargar un recurso común de redes publicitarias
+  const googleAdsUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+  
+  try {
+    const response = await fetch(new Request(googleAdsUrl, { method: 'HEAD', mode: 'no-cors' }));
+  } catch (error) {
+    // Si la red bloquea la petición fetch, hay AdBlock
+    adBlocked = true;
+  }
+
+  // Intento 2: Verificar trampas de elementos bloqueables (fallback)
+  if (!adBlocked) {
+    const dummyAd = document.createElement('div');
+    dummyAd.className = 'adsbygoogle ad-unit ad-zone banner-ad';
+    dummyAd.style.position = 'absolute';
+    dummyAd.style.top = '-9999px';
+    document.body.appendChild(dummyAd);
+
+    if (dummyAd.offsetHeight === 0 || window.getComputedStyle(dummyAd).display === 'none') {
+      adBlocked = true;
+    }
+    dummyAd.remove();
+  }
+
+  // Si se detectó el bloqueador, mostramos el modal
+  if (adBlocked) {
+    document.getElementById('adblock-overlay').style.display = 'flex';
+    // Opcional: Bloquear el scroll de la página
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Ejecutar la verificación al cargar la ventana
+window.addEventListener('load', checkAdBlock);
+</script>
 </body>
 </html>

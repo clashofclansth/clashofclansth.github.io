@@ -928,44 +928,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   background-color: #e2e2e5;
 }
 </style>
-    <script>
-async function checkAdBlock() {
-  let adBlocked = false;
+<script>
+function checkAdBlock() {
+  // 1. Crear un elemento trampa que simula un anuncio
+  const dummyAd = document.createElement('div');
+  dummyAd.className = 'adsbygoogle ad-unit ad-zone banner-ad';
+  dummyAd.style.position = 'absolute';
+  dummyAd.style.left = '-9999px';
+  dummyAd.style.top = '-9999px';
+  dummyAd.style.height = '1px';
+  dummyAd.style.width = '1px';
 
-  // Intento 1: Cargar un recurso común de redes publicitarias
-  const googleAdsUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  
-  try {
-    const response = await fetch(new Request(googleAdsUrl, { method: 'HEAD', mode: 'no-cors' }));
-  } catch (error) {
-    // Si la red bloquea la petición fetch, hay AdBlock
-    adBlocked = true;
-  }
+  document.body.appendChild(dummyAd);
 
-  // Intento 2: Verificar trampas de elementos bloqueables (fallback)
-  if (!adBlocked) {
-    const dummyAd = document.createElement('div');
-    dummyAd.className = 'adsbygoogle ad-unit ad-zone banner-ad';
-    dummyAd.style.position = 'absolute';
-    dummyAd.style.top = '-9999px';
-    document.body.appendChild(dummyAd);
+  // 2. Darle un instante al navegador/extensión para procesar la regla
+  setTimeout(() => {
+    let isBlocked = false;
 
-    if (dummyAd.offsetHeight === 0 || window.getComputedStyle(dummyAd).display === 'none') {
-      adBlocked = true;
+    // Si la extensión ocultó el elemento o lo eliminó del alto/ancho
+    if (
+      dummyAd.offsetHeight === 0 ||
+      dummyAd.offsetWidth === 0 ||
+      window.getComputedStyle(dummyAd).display === 'none' ||
+      window.getComputedStyle(dummyAd).visibility === 'hidden'
+    ) {
+      isBlocked = true;
     }
-    dummyAd.remove();
-  }
 
-  // Si se detectó el bloqueador, mostramos el modal
-  if (adBlocked) {
-    document.getElementById('adblock-overlay').style.display = 'flex';
-    // Opcional: Bloquear el scroll de la página
-    document.body.style.overflow = 'hidden';
-  }
+    // Limpiar el elemento trampa del DOM
+    dummyAd.remove();
+
+    // 3. Mostrar modal SOLO si un bloqueador modificó el elemento
+    if (isBlocked) {
+      document.getElementById('adblock-overlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+  }, 100);
 }
 
-// Ejecutar la verificación al cargar la ventana
+// Ejecutar la verificación cuando la página cargue
 window.addEventListener('load', checkAdBlock);
+</script>
 </script>
 </body>
 </html>

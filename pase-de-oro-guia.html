@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Vale la Pena el Pase de Oro de Este Mes? - CoC Realm</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Meta etiquetas SEO optimizadas -->
+    <meta name="description" content="Análisis completo del Pase de Oro de este mes en Clash of Clans. Descubre si valen la pena las recompensas, libros mágicos, skins y ventajas.">
+    <meta name="keywords" content="Pase de Oro Clash of Clans, Vale la pena el Pase de Oro, Recompensas CoC, Objetos Magicos Clash of Clans, Skin Héroe CoC">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #080b10;
+            --card-bg: #111622;
+            --accent-gold: #ffb703;
+            --accent-cyan: #00f0ff;
+            --accent-crimson: #ff0055;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 240, 255, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, .font-tech {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Navegación */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 22, 34, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-back {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .btn-back:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Contenedor del Artículo */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Encabezado del Artículo */
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(255, 183, 3, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 2.3rem;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 20px;
+        }
+
+        /* Banner Principal / Imagen Destacada */
+        .featured-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-glow);
+            margin-bottom: 35px;
+        }
+
+        /* Contenido del Texto */
+        .article-content p {
+            font-size: 1.15rem;
+            margin-bottom: 22px;
+            color: #d1d5db;
+        }
+
+        .article-content h2 {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin: 40px 0 18px 0;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+        }
+
+        /* Cita / Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 183, 3, 0.05), rgba(0, 240, 255, 0.05));
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        /* Tablas */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 12px 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stats-table th {
+            background-color: rgba(255, 183, 3, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Espacio para Anuncio */
+        .ad-banner {
+            background: #0e1420;
+            border: 1px dashed var(--accent-cyan);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 30px 0;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: #040608;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .featured-image { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <a href="../" class="logo-text font-tech">
+                <i class="fa-solid fa-shield-halved"></i> CoC REALM
+            </a>
+            <a href="../" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <main class="article-container">
+
+        <div class="article-header">
+            <span class="article-tag font-tech"><i class="fa-solid fa-gem"></i> Guías y Ofertas</span>
+            <h1 class="article-title font-tech">¿Vale la Pena el Pase de Oro de Este Mes? Análisis de Recompensas</h1>
+            <div class="article-meta">
+                <span><i class="fa-regular fa-user"></i> Redacción CoC Realm</span>
+                <span><i class="fa-regular fa-calendar"></i> 2026</span>
+                <span><i class="fa-regular fa-clock"></i> Lectura 4 min</span>
+            </div>
+        </div>
+
+        <img src="https://i.ytimg.com/vi/c4Et47zaPcs/maxresdefault.jpg" alt="Pase de Oro Clash of Clans Recompensas" class="featured-image">
+
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (INSERTA TU SCRIPT AQUÍ)
+        </div>
+
+        <article class="article-content">
+            <p>Cada inicio de mes, la gran pregunta en la comunidad de <strong>Clash of Clans</strong> es la misma: <em>¿realmente conviene gastar en el Pase de Oro de esta temporada?</em> Desglosamos todas las ventajas, libros mágicos y potenciadores para determinar si justifica tu inversión.</p>
+
+            <h2>1. Valor en Objetos Mágicos y Recursos</h2>
+            <p>Comprar los objetos mágicos del Pase de Oro por separado en la tienda del juego costaría más de $100 USD. Al adquirir el pase, obtienes un paquete completo que acelera drásticamente la progresión de tu aldea principal y nocturna.</p>
+
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Objeto Mágico</th>
+                        <th>Utilidad Principal</th>
+                        <th>Valor Estimado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Libro de Héroes</strong></td>
+                        <td>Sube un nivel de héroe instantáneamente.</td>
+                        <td>500 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Libro de Estructuras</strong></td>
+                        <td>Completa cualquier mejora de edificio de inmediato.</td>
+                        <td>925 Gemas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Runas de Elixir y Oro</strong></td>
+                        <td>Llenan tus almacenes al máximo al instante.</td>
+                        <td>1500 Gemas c/u</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pociones Mágicas</strong></td>
+                        <td>Aceleración de investigación, recursos y entrenamiento.</td>
+                        <td>Variado</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h3 class="font-tech"><i class="fa-solid fa-lightbulb"></i> La Verdadera Ventaja: Los Potenciadores del 20%</h3>
+                <p>Más allá de las recompensas finales, los descuentos del 20% en tiempo y costo de construcción, investigación y entrenamiento reducen semanas de espera y millones de recursos a lo largo de todo el mes.</p>
+            </div>
+
+            <h2>2. Skin Exclusiva y Aspecto Estético</h2>
+            <p>Cada Pase de Oro incluye un aspecto exclusivo para uno de los cuatro héroes principales (Rey Bárbaro, Reina Arquera, Gran Centinela o Luchadora Real). Si eres coleccionista, estas skins son de tiempo limitado y rara vez vuelven a la tienda a corto plazo.</p>
+
+            <h2>3. Banco de la Temporada</h2>
+            <p>El Banco de la Temporada te permite acumular hasta 30,000,000 de Oro, 30,000,000 de Elixir y 300,000 de Elixir Oscuro extra que se entregan automáticamente al finalizar el mes, ideal para iniciar el siguiente mes con mejoras masivas.</p>
+
+            <h2>Conclusión: ¿Deberías Comprarlo?</h2>
+            <p><strong>Sí, totalmente.</strong> Si juegas a diario y estás en un Ayuntamiento medio o alto (TH12 en adelante), el Pase de Oro sigue siendo la compra con mejor relación costo-beneficio de todo Clash of Clans.</p>
+        </article>
+
+        <div class="ad-banner font-tech">
+            <i class="fa-solid fa-rectangle-ad"></i> ESPACIO MONETAG (INSERTA TU SCRIPT AQUÍ)
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CoC Realm - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -464,9 +464,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .nav-links { display: none; }
             .hero-actions { flex-direction: column; }
         }
+        /* Botón flotante en la esquina superior izquierda */
+.kofi-button {
+  /* Posicionamiento fijo */
+  position: fixed;
+  top: 16px;       /* Distancia desde arriba */
+  left: 350px;      /* Distancia desde la izquierda */
+  z-index: 9999;   /* Asegura que quede por encima de otros elementos */
+
+  /* Estilos visuales del botón */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ff5e5b;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255, 94, 91, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+/* Icono */
+.kofi-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Interacción al pasar el mouse */
+.kofi-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 94, 91, 0.4);
+  background-color: #ff4845;
+}
+
+/* Interacción al hacer clic */
+.kofi-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Animación sutil de pulso */
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(255, 94, 91, 0.25);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 94, 91, 0.55);
+  }
+}
     </style>
 </head>
 <body>
+    
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NRLMZKW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -581,6 +634,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <i class="fa-brands fa-twitch"></i>
             </a>
         </div>
+        <a href="https://ko-fi.com/proplayerzzzxrx" target="_blank" rel="noopener noreferrer" class="kofi-button">
+  <svg class="kofi-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324.022 11.822c.164 7.072 5.81 7.072 5.81 7.072h8.083c5.58 0 5.867-5.522 5.867-5.522.616.052 2.923.012 3.931-2.007 1.008-2.019.124-7.57-.876-7.57zm-3.08 6.443c-.603 1.208-2.036 1.054-2.036 1.054V7.61s2.83-.243 2.99 2.583c.16 2.827-.351 4.582-.954 5.2z"/>
+  </svg>
+  <span>Invitame un café</span>
+</a>
 
         <div class="footer-links">
             <a href="#">Inicio</a>

@@ -1,20 +1,32 @@
-[
+const misArticulos = [
   {
-    "url": "articulo-1.html",
-    "imagen": "https://via.placeholder.com/400x200",
-    "categoria": "Estrategia",
-    "titulo": "Mejores Ejércitos para TH16 en Guerra",
-    "resumen": "Descubre las combinaciones de tropas más efectivas para conseguir 3 estrellas en Ayuntamiento 16.",
+    "id": "championship",
+    "titulo": "¡Xiyan Gana el Torneo Mundial de Clash of Clans!",
+    "categoria": "eSports CoC",
+    "iconoCategoria": "fa-trophy",
+    "resumen": "Análisis de la gran final donde Xiyan se coronó campeón demostrando ejecuciones perfectas y estrategias impecables.",
+    "imagen": "https://i.ytimg.com/vi/TWKzDB_Etyw/hqdefault.jpg",
     "tiempoLectura": "5 min",
-    "iconoCategoria": "fa-shield-halved"
+    "url": "championship"
   },
   {
-    "url": "articulo-2.html",
-    "imagen": "https://via.placeholder.com/400x200",
-    "categoria": "eSports",
-    "titulo": "Resumen del Campeonato Mundial CoC",
-    "resumen": "Repaso de las jugadas maestras y los momentos más intensos de la gran final.",
-    "tiempoLectura": "4 min",
-    "iconoCategoria": "fa-trophy"
+    "id": "gemas",
+    "titulo": "Cómo Optimizar tus Constructores y Gemas al Máximo",
+    "categoria": "Gestión de Cuenta",
+    "iconoCategoria": "fa-hammer",
+    "resumen": "Paso a paso para avanzar la aldea sin gastar dinero real aprovechando los objetos mágicos y la aldea nocturna.",
+    "imagen": "https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg",
+    "tiempoLectura": "5 min",
+    "url": "gemas"
+  },
+  {
+    "id": "TH15Air",
+    "titulo": "Mejor Ejército Meta Actual TH15",
+    "categoria": "Estrategia TH15",
+    "iconoCategoria": "fa-shield-halved",
+    "resumen": "El mejor ataque del meta actual para dominar tus guerras en Ayuntamiento 15.",
+    "imagen": "https://i.ytimg.com/vi/Uqfzco0V7-o/hq720.jpg",
+    "tiempoLectura": "5 min",
+    "url": "TH15Air"
   }
-]
+];

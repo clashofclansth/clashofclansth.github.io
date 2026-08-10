@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoC Realm - Noticias, Torneos y Estrategias de Clash of Clans</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <meta name='admaven-placement' content=BqdUFqHn7>
     
     <!-- Metadatos SEO Avanzados -->
@@ -107,15 +107,23 @@
             color: var(--accent-gold);
             letter-spacing: 2px;
             max-width: 800px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-action {
             background: linear-gradient(45deg, var(--accent-crimson), var(--accent-gold));
             color: #fff;
-            padding: 16px 40px;
-            font-size: 1.2rem;
+            padding: 16px 35px;
+            font-size: 1.1rem;
             font-weight: 700;
             border: none;
             border-radius: 4px;
@@ -133,9 +141,39 @@
             box-shadow: 0 0 40px rgba(255, 183, 3, 0.9);
         }
 
+        /* Botón del Sorteo dentro de la Hero section */
+        .btn-sorteo-animated {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(255, 65, 108, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse 1.8s infinite;
+        }
+
+        .btn-sorteo-animated:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 75, 43, 0.9);
+            color: #ffffff;
+        }
+
         @keyframes pulseGlow {
             0% { opacity: 0.9; text-shadow: 0 0 15px var(--accent-cyan); }
             100% { opacity: 1; text-shadow: 0 0 35px var(--accent-cyan), 0 0 10px var(--accent-crimson); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 65, 108, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 65, 108, 0); }
         }
 
         /* Layout Principal */
@@ -191,6 +229,39 @@
             color: var(--accent-gold);
         }
 
+        /* Estilos de Redes Sociales */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 1.4rem;
+            text-decoration: none;
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .social-btn.tiktok:hover { background: #000000; box-shadow: 0 0 15px rgba(254, 44, 85, 0.6); }
+        .social-btn.youtube:hover { background: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
+        .social-btn.discord:hover { background: #5865f2; box-shadow: 0 0 15px rgba(88, 101, 242, 0.6); }
+        .social-btn.twitch:hover { background: #9146ff; box-shadow: 0 0 15px rgba(145, 70, 255, 0.6); }
+
         /* Banner Publicitario (Monetag) */
         .ad-placeholder {
             background: linear-gradient(90deg, #182232, #0d131d);
@@ -221,11 +292,10 @@
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        /* Enlaces envolventes para las tarjetas */
         .card-link {
             text-decoration: none;
             color: inherit;
@@ -250,11 +320,10 @@
             box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
         }
 
-        /* Contenedor de Imagen con Placeholder */
         .card-img-wrapper {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 200px;
             background-color: #1a2234;
             display: flex;
             align-items: center;
@@ -269,7 +338,7 @@
         }
 
         .card-body {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -284,7 +353,7 @@
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 12px;
             color: #fff;
             line-height: 1.3;
@@ -386,6 +455,7 @@
             .hero-title { font-size: 2.2rem; }
             .hero-subtitle { font-size: 1.1rem; }
             .nav-links { display: none; }
+            .hero-actions { flex-direction: column; }
         }
     </style>
 </head>
@@ -401,91 +471,35 @@
                 <li><a href="#articulos">Artículos</a></li>
                 <li><a href="#esports">eSports</a></li>
                 <li><a href="#videos">Videos CoC</a></li>
-                <li><a href="#eventos">Eventos</a></li>
             </ul>
         </div>
     </header>
-    <!-- BOTÓN LLAMATIVO DEL SORTEO -->
-<div id="contenedor-sorteo" style="text-align: center; margin: 20px 0;">
-  <a href="Sorteo" class="btn-sorteo-animated">
-    <i class="fa-solid fa-gift"></i> ¡PARTICIPA EN EL SORTEO DEL PASE! <i class="fa-solid fa-fire"></i>
-  </a>
-</div>
 
-<!-- ESTILOS Y ANIMACIÓN DEL BOTÓN -->
-<style>
-  .btn-sorteo-animated {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: #ffffff;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 50px;
-    box-shadow: 0 0 20px rgba(255, 65, 108, 0.6);
-    transition: all 0.3s ease;
-    animation: pulse 1.8s infinite;
-  }
-
-  .btn-sorteo-animated:hover {
-    transform: scale(1.08) translateY(-3px);
-    box-shadow: 0 0 30px rgba(255, 75, 43, 0.9);
-    color: #ffffff;
-  }
-
-  /* Animación de pulso continuo para llamar la atención */
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 15px rgba(255, 65, 108, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(255, 65, 108, 0);
-    }
-  }
-</style>
-
-<!-- SCRIPT PARA OCULTAR EL BOTÓN SI YA REGISTRÓ -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Revisa si la marca existe en el navegador
-    if (localStorage.getItem('participando_sorteo') === 'true') {
-      var contenedor = document.getElementById('contenedor-sorteo');
-      if (contenedor) {
-        // Opción A: Ocultar completamente el botón
-        contenedor.style.display = 'none';
-
-        // Opción B (Opcional): Si prefieres mostrar un mensaje de confirmación en su lugar:
-        /*
-        contenedor.innerHTML = '<p style="color: #4ade80; font-weight: bold; background: rgba(30,41,59,0.8); padding: 10px; border-radius: 8px; display: inline-block;">✅ ¡Ya estás registrado en el sorteo!</p>';
-        */
-      }
-    }
-  });
-</script>
-
-    <!-- Presentación 3D Interactiva -->
+    <!-- Presentación 3D Interactiva (Hero Section) -->
     <section id="hero-3d-container">
         <canvas id="webgl-canvas"></canvas>
         <div class="hero-overlay">
             <h1 class="hero-title font-tech">COC REALM GAMING</h1>
             <p class="hero-subtitle">Noticias de Torneos, Guías de Ataque para Town Hall y Cobertura de Eventos de Clash of Clans.</p>
             
-            <button class="btn-action font-tech" onclick="scrollToArticles()">
-                <i class="fa-solid fa-fire"></i> EXPLORAR ARTÍCULOS
-            </button>
+            <div class="hero-actions">
+                <button class="btn-action font-tech" onclick="scrollToArticles()">
+                    <i class="fa-solid fa-fire"></i> EXPLORAR ARTÍCULOS
+                </button>
+
+                <!-- BOTÓN DEL SORTEO (Integrado de forma limpia) -->
+                <div id="contenedor-sorteo">
+                    <a href="Sorteo" class="btn-sorteo-animated font-tech">
+                        <i class="fa-solid fa-gift"></i> PARTICIPA EN EL SORTEO <i class="fa-solid fa-fire"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <div class="container">
 
-        <!-- Espacio publicitario listo para Monetag -->
+        <!-- Espacio publicitario para Monetag -->
         <div class="ad-placeholder font-tech">
             <i class="fa-solid fa-rectangle-ad"></i> ANUNCIO MONETAG (COLOCAR CÓDIGO DE SCRIPT AQUÍ)
         </div>
@@ -493,7 +507,7 @@
         <!-- SECCIÓN DE ARTÍCULOS -->
         <div class="section-header" id="articulos">
             <h2 class="section-title">Últimas Publicaciones</h2>
-            <span style="color: var(--accent-cyan);">5 Artículos Publicados</span>
+            <span style="color: var(--accent-cyan);">3 Artículos Publicados</span>
         </div>
 
         <div class="blog-grid">
@@ -516,13 +530,13 @@
                 </article>
             </a>
 
-            <!-- ARTÍCULO 5: OPTIMIZACIÓN Y TRUCOS COC -->
+            <!-- ARTÍCULO 2: OPTIMIZACIÓN Y TRUCOS COC -->
             <a href="gemas" class="card-link">
                 <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg" alt="Trucos de Recursos CoC" class="card-img">
+                    </div>
                     <div class="card-body">
-                        <div class="card-img-wrapper" style="margin: -25px -25px 25px -25px;">
-                            <img src="https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg" alt="Trucos de Recursos CoC" class="card-img">
-                        </div>
                         <span class="card-tag">Gestión de Cuenta</span>
                         <h3 class="card-title font-tech">Cómo Optimizar tus Constructores y Gemas al Máximo</h3>
                         <p class="card-excerpt">Paso a paso para avanzar la aldea sin gastar dinero real aprovechando los objetos mágicos y la aldea nocturna.</p>
@@ -534,18 +548,19 @@
                 </article>
             </a>
 
-                        <a href="TH15Air" class="card-link">
+            <!-- ARTÍCULO 3: TH15 META -->
+            <a href="TH15Air" class="card-link">
                 <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://i.ytimg.com/vi/Uqfzco0V7-o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLClyQVgoRvYBgUT1Tn6mq10EGmxnA" alt="Mejor Ejercito Meta Actual Th15" class="card-img">
+                    </div>
                     <div class="card-body">
-                        <div class="card-img-wrapper" style="margin: -25px -25px 25px -25px;">
-                            <img src="https://i.ytimg.com/vi/Uqfzco0V7-o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLClyQVgoRvYBgUT1Tn6mq10EGmxnA" alt="Trucos de Recursos CoC" class="card-img">
-                        </div>
-                        <span class="card-tag">Gestión de Cuenta</span>
-                        <h3 class="card-title font-tech">Mejor Ejercito Meta Actual Th15</h3>
-                        <p class="card-excerpt">El mejor ataque del meta Actual para Th15</p>
+                        <span class="card-tag">Estrategia TH15</span>
+                        <h3 class="card-title font-tech">Mejor Ejército Meta Actual TH15</h3>
+                        <p class="card-excerpt">El mejor ataque del meta actual para dominar tus guerras en TH15.</p>
                         <div class="card-meta">
                             <span><i class="fa-regular fa-clock"></i> Lectura 5 min</span>
-                            <span><i class="fa-solid fa-hammer"></i> Guía F2P</span>
+                            <span><i class="fa-solid fa-shield-halved"></i> Estrategia</span>
                         </div>
                     </div>
                 </article>
@@ -596,6 +611,22 @@
     </div>
 
     <footer>
+        <!-- REDES SOCIALES EN EL FOOTER -->
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@proplayerzxrx777" target="_blank" rel="noopener" class="social-btn tiktok" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@ProplayerzXRX?sub_confirmation=1" target="_blank" rel="noopener" class="social-btn youtube" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://discord.com/invite/QdwayK5JHx" target="_blank" rel="noopener" class="social-btn discord" title="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://www.twitch.tv/u/xzproplayerxx/home" target="_blank" rel="noopener" class="social-btn twitch" title="Twitch">
+                <i class="fa-brands fa-twitch"></i>
+            </a>
+        </div>
+
         <div class="footer-links">
             <a href="#">Inicio</a>
             <a href="#">Política de Privacidad</a>
@@ -604,8 +635,19 @@
         <p>&copy; 2026 CoC Realm - Blog Monetizable en GitHub Pages</p>
     </footer>
 
-    <!-- Scripts de la Intro 3D y Desplazamiento Suave -->
+    <!-- SCRIPT DE INTERACCIÓN Y SORTEO -->
     <script>
+        // Oculta el botón de sorteo si ya participó
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem('participando_sorteo') === 'true') {
+                var contenedor = document.getElementById('contenedor-sorteo');
+                if (contenedor) {
+                    contenedor.style.display = 'none';
+                }
+            }
+        });
+
+        // Scroll suave al hacer clic en Explorar Artículos
         function scrollToArticles() {
             const articleSection = document.getElementById('articulos');
             if (articleSection) {
@@ -613,6 +655,7 @@
             }
         }
 
+        // Configuración de la escena Three.js en 3D
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -678,15 +721,16 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
     </script>
+
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "CoC Realm",
-  "alternateName": "Clash of Clans TH",
-  "url": "https://clashofclansth.github.io/",
-  "description": "El portal definitivo de Clash of Clans. Noticias eSports, estrategias para Town Hall, sorteos de pases de batalla y videos de ataques."
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CoC Realm",
+      "alternateName": "Clash of Clans TH",
+      "url": "https://clashofclansth.github.io/",
+      "description": "El portal definitivo de Clash of Clans. Noticias eSports, estrategias para Town Hall, sorteos de pases de batalla y videos de ataques."
+    }
+    </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Página principal (index) -->
+  <url>
+    <loc>https://clashofclansth.github.io/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://clashofclansth.github.io/index.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Página de Sorteos -->
+  <url>
+    <loc>https://clashofclansth.github.io/sorteo.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Estrategia TH15 Aéreo -->
+  <url>
+    <loc>https://clashofclansth.github.io/TH15Air.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Guía de Gemas -->
+  <url>
+    <loc>https://clashofclansth.github.io/gemas.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Noticias Championship -->
+  <url>
+    <loc>https://clashofclansth.github.io/championship.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorteo Pase de Batalla | Participa Gratis</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -98,9 +98,8 @@
       color: #a855f7;
     }
   </style>
-    <script src="https://turbulentrefreshments.com/d1/8e/68/d18e680b3e59cc09f87811b6dc484f40.js"></script>
-    <script src="https://turbulentrefreshments.com/59/fa/0d/59fa0d8ec34506473a1ddc90b0749fe0.js"></script>
-
+  <script src="https://turbulentrefreshments.com/d1/8e/68/d18e680b3e59cc09f87811b6dc484f40.js"></script>
+  <script src="https://turbulentrefreshments.com/59/fa/0d/59fa0d8ec34506473a1ddc90b0749fe0.js"></script>
 </head>
 <body>
 
@@ -110,9 +109,7 @@
     <p>Ingresa tus datos para registrarte. Elegiremos al ganador en vivo en TikTok.</p>
 
     <!-- FORMULARIO CONECTADO A TU GOOGLE FORM -->
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSc.../formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" id="formSorteo">
-      
-      <!-- Reemplazaremos la URL dinámica con un script para garantizar que funcione sin errores de URL larga -->
+    <form action="https://docs.google.com/forms/u/0/d/1ctfJEIEzVA2PeiFgFEZO3ONihLzCfHJYirovpYW3puY/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" id="formSorteo">
       
       <div class="form-group">
         <label for="username">ID o Nick de Jugador:</label>
@@ -124,6 +121,9 @@
         <input type="text" id="tiktok" name="entry.349051690" placeholder="@tu_usuario" required>
       </div>
 
+      <!-- CAMPO OCULTO CON TU ENTRY DE REFERIDOS -->
+      <input type="hidden" id="referido" name="entry.758850597">
+
       <button type="submit" class="btn-participar">
         <i class="fa-solid fa-ticket"></i> Confirmar Inscripción
       </button>
@@ -134,20 +134,25 @@
     </div>
   </div>
 
-  <!-- IFRAME OCULTO: Permite enviar los datos a Google Sheets sin sacar al usuario de tu web -->
+  <!-- IFRAME OCULTO -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+    onload="if(submitted) { 
+      localStorage.setItem('participando_sorteo', 'true'); 
+      alert('¡Inscripción exitosa! Ya estás participando.'); 
+      window.location.href='index.html'; 
+    }">
+  </iframe>
+
   <script type="text/javascript">
     var submitted = false;
-    // Asigna la dirección exacta de envío de tu formulario de Google
-    document.getElementById('formSorteo').action = "https://docs.google.com/forms/u/0/d/1ctfJEIEzVA2PeiFgFEZO3ONihLzCfHJYirovpYW3puY/formResponse";
+
+    // CAPTURAR EL CÓDIGO DE REFERIDO DE LA URL (ej: ?ref=arkgod)
+    const params = new URLSearchParams(window.location.search);
+    const refCode = params.get('ref') || 'Directo';
+    
+    // ASIGNAR EL VALOR AL CAMPO OCULTO
+    document.getElementById('referido').value = refCode;
   </script>
-  
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
-  onload="if(submitted) { 
-    localStorage.setItem('participando_sorteo', 'true'); 
-    alert('¡Inscripción exitosa! Ya estás participando.'); 
-    window.location.href='index.html'; 
-  }">
-</iframe>
 
 </body>
 </html>

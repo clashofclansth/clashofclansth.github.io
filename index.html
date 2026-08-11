@@ -58,12 +58,52 @@
         .hero-title { font-size: 3.5rem; font-weight: 900; color: #fff; text-shadow: 0 0 20px var(--accent-cyan); margin-bottom: 10px; }
         .hero-subtitle { font-size: 1.3rem; color: var(--accent-gold); max-width: 800px; margin-bottom: 25px; }
 
+        /* Estilos del Sorteo y Código Promocional */
+        .promo-sorteo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .promo-input {
+            padding: 14px 20px;
+            background: rgba(17, 22, 34, 0.9);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50px;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            outline: none;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .promo-input:focus {
+            box-shadow: 0 0 18px var(--accent-cyan);
+        }
+
         .btn-sorteo-animated {
             display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px;
             background: linear-gradient(135deg, #ff416c, #ff4b2b); color: #fff; font-size: 1.1rem;
-            font-weight: 800; text-decoration: none; border-radius: 50px;
-            box-shadow: 0 0 20px rgba(255, 65, 108, 0.6); animation: pulse 1.8s infinite;
+            font-weight: 800; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 65, 108, 0.6); transition: all 0.3s ease;
         }
+
+        .btn-sorteo-animated:enabled {
+            animation: pulse 1.8s infinite;
+        }
+
+        .btn-sorteo-animated:disabled {
+            background: #4a5568;
+            box-shadow: none;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(255, 65, 108, 0); }
@@ -83,7 +123,7 @@
         .th-selector-section { margin: 50px 0; text-align: center; }
         .th-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 POR FILA EXACTAMENTE */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 30px;
         }
@@ -150,7 +190,7 @@
         footer { background: #040608; border-top: 1px solid rgba(255,255,255,0.05); padding: 40px 20px; text-align: center; color: var(--text-muted); margin-top: 80px; }
 
         @media (max-width: 992px) {
-            .th-grid { grid-template-columns: repeat(2, 1fr); } /* 2 por fila en móvil/tablets */
+            .th-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
     <script src="https://turbulentrefreshments.com/d1/8e/68/d18e680b3e59cc09f87811b6dc484f40.js"></script>
@@ -176,10 +216,17 @@
             <h1 class="hero-title font-tech">MODELOS DE BASES COC</h1>
             <p class="hero-subtitle">Selecciona tu nivel de Ayuntamiento y copia los mejores diseños de aldea actualizados para el Meta.</p>
             
-            <div id="contenedor-sorteo">
-                <a href="sorteo.html" class="btn-sorteo-animated font-tech">
+            <div id="contenedor-sorteo" class="promo-sorteo-box">
+                <input 
+                    type="text" 
+                    id="input-codigo" 
+                    class="promo-input" 
+                    placeholder="Código promocional" 
+                    oninput="validarCodigo()"
+                />
+                <button id="btn-sorteo" class="btn-sorteo-animated font-tech" disabled onclick="participarSorteo()">
                     <i class="fa-solid fa-gift"></i> PARTICIPA EN EL SORTEO <i class="fa-solid fa-fire"></i>
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -195,61 +242,61 @@
             <div class="th-grid">
                 <!-- Fila 1 -->
                 <a href="th6.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th6.png" alt="TH6" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH6'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th6_min.jpg" alt="TH6" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH6'">
                     <span class="th-title font-tech">Town Hall 6</span>
                 </a>
                 <a href="th7.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th7.png" alt="TH7" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH7'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th7_min.jpg" alt="TH7" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH7'">
                     <span class="th-title font-tech">Town Hall 7</span>
                 </a>
                 <a href="th8.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th8.png" alt="TH8" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH8'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th8_min.jpg" alt="TH8" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH8'">
                     <span class="th-title font-tech">Town Hall 8</span>
                 </a>
                 <a href="th9.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th9.png" alt="TH9" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH9'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th9_min.jpg" alt="TH9" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH9'">
                     <span class="th-title font-tech">Town Hall 9</span>
                 </a>
 
                 <!-- Fila 2 -->
                 <a href="th10.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th10.png" alt="TH10" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH10'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th10_min.jpg" alt="TH10" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH10'">
                     <span class="th-title font-tech">Town Hall 10</span>
                 </a>
                 <a href="th11.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th11.png" alt="TH11" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH11'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th11_min.jpg" alt="TH11" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH11'">
                     <span class="th-title font-tech">Town Hall 11</span>
                 </a>
                 <a href="th12.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th12.png" alt="TH12" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH12'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th12_min.jpg" alt="TH12" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH12'">
                     <span class="th-title font-tech">Town Hall 12</span>
                 </a>
                 <a href="th13.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th13.png" alt="TH13" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH13'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th13_min.jpg" alt="TH13" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH13'">
                     <span class="th-title font-tech">Town Hall 13</span>
                 </a>
 
                 <!-- Fila 3 -->
                 <a href="th14.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th14.png" alt="TH14" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH14'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th14_min.jpg" alt="TH14" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH14'">
                     <span class="th-title font-tech">Town Hall 14</span>
                 </a>
                 <a href="th15.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th15.png" alt="TH15" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH15'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th15_min.jpg" alt="TH15" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH15'">
                     <span class="th-title font-tech">Town Hall 15</span>
                 </a>
                 <a href="th16.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th16.png" alt="TH16" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH16'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th16_min.jpg" alt="TH16" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH16'">
                     <span class="th-title font-tech">Town Hall 16</span>
                 </a>
                 <a href="th17.html" class="th-card">
-                    <img src="https://clashofclans.com/uploaded-images/th17.png" alt="TH17" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH17'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th17_min.jpg" alt="TH17" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH17'">
                     <span class="th-title font-tech">Town Hall 17</span>
                 </a>
 
                 <!-- Fila 4 -->
                 <a href="th18.html" class="th-card" style="grid-column: span 4; max-width: 300px; margin: 0 auto;">
-                    <img src="https://clashofclans.com/uploaded-images/th18.png" alt="TH18" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH18'">
+                    <img src="https://clashofclans-layouts.com/pics/town_hall/th18_min.jpg" alt="TH18" class="th-icon" onerror="this.src='https://via.placeholder.com/100?text=TH18'">
                     <span class="th-title font-tech">Town Hall 18</span>
                 </a>
             </div>
@@ -267,7 +314,7 @@
         <!-- Banner Publicitario Monetag -->
         <div class="ad-placeholder font-tech">
             <script>
-              atOptions = { 'key' : 'a7054f7cb20b8eb267beaa2fdb4c739e', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+                atOptions = { 'key' : 'a7054f7cb20b8eb267beaa2fdb4c739e', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
             </script>
             <script src="https://turbulentrefreshments.com/a7054f7cb20b8eb267beaa2fdb4c739e/invoke.js"></script>
         </div>
@@ -286,9 +333,19 @@
         <p>&copy; 2026 CoC Realm - Blog Monetizable de Clash of Clans</p>
     </footer>
 
-    <!-- Script de Carga de Artículos y ThreeJS ... -->
+    <!-- Script de Validación, Sorteo, Artículos y ThreeJS -->
     <script>
+        // LÓGICA DE VALIDACIÓN DEL CÓDIGO Y SORTEO
+        const codigosValidos = ["arkgod", "kennedy"];
+
         document.addEventListener("DOMContentLoaded", function() {
+            // Verificar si el usuario ya participó
+            if (localStorage.getItem("sorteo_participado") === "true") {
+                const contenedor = document.getElementById("contenedor-sorteo");
+                if (contenedor) contenedor.style.display = "none";
+            }
+
+            // Carga de Artículos
             fetch('./articulos.json').then(res => res.json()).then(data => {
                 const grid = document.getElementById('blog-grid');
                 if(!grid) return;
@@ -303,6 +360,28 @@
                 `).join('');
             });
         });
+
+        function validarCodigo() {
+            const input = document.getElementById("input-codigo").value.trim();
+            const btnSorteo = document.getElementById("btn-sorteo");
+
+            // Valida coincidencia exacta en minúsculas
+            if (codigosValidos.includes(input)) {
+                btnSorteo.disabled = false;
+            } else {
+                btnSorteo.disabled = true;
+            }
+        }
+
+        function participarSorteo() {
+            const input = document.getElementById("input-codigo").value.trim();
+
+            localStorage.setItem("sorteo_participado", "true");
+            localStorage.setItem("codigo_usado", input);
+
+            // Redireccionar a la página del sorteo pasándole el código introducido
+            window.location.href = "sorteo.html?ref=" + encodeURIComponent(input);
+        }
 
         // Escena Three.js
         const canvas = document.getElementById('webgl-canvas');

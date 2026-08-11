@@ -1,5 +1,15 @@
 [
   {
+    "id": "guia-minerales-coc",
+    "titulo": "¿En Qué Invertir Tus Minerales en Clash of Clans? Prioridad de Equipos",
+    "categoria": "Guía de Héroes",
+    "iconoCategoria": "fa-gem",
+    "resumen": "Aprende a gastar eficientemente tus Minerales Estelares, Brillantes y Brillantes Negros. Descubre los mejores Equipos de Héroes para maximizar en el meta actual.",
+    "imagen": "https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg",
+    "tiempoLectura": "6 min",
+    "url": "guia-minerales-coc"
+  },
+  {
     "id": "championship",
     "titulo": "¡Xiyan Gana el Torneo Mundial de Clash of Clans!",
     "categoria": "eSports CoC",
@@ -8,55 +18,5 @@
     "imagen": "https://i.ytimg.com/vi/TWKzDB_Etyw/hqdefault.jpg",
     "tiempoLectura": "5 min",
     "url": "championship"
-  },
-  {
-    "id": "gemas",
-    "titulo": "Cómo Optimizar tus Constructores y Gemas al Máximo",
-    "categoria": "Gestión de Cuenta",
-    "iconoCategoria": "fa-hammer",
-    "resumen": "Paso a paso para avanzar la aldea sin gastar dinero real aprovechando los objetos mágicos y la aldea nocturna.",
-    "imagen": "https://i.ytimg.com/vi/rQOMvEM1PYA/maxresdefault.jpg",
-    "tiempoLectura": "5 min",
-    "url": "gemas"
-  },
-  {
-    "id": "TH15Air",
-    "titulo": "Mejor Ejército Meta Actual TH15",
-    "categoria": "Estrategia TH15",
-    "iconoCategoria": "fa-shield-halved",
-    "resumen": "El mejor ataque del meta actual para dominar tus guerras en Ayuntamiento 15.",
-    "imagen": "https://i.ytimg.com/vi/Uqfzco0V7-o/hq720.jpg",
-    "tiempoLectura": "5 min",
-    "url": "TH15Air"
-  },
-  {
-    "id": "pase-de-oro-guia",
-    "titulo": "¿Vale la Pena el Pase de Oro de Este Mes? Análisis de Recompensas",
-    "categoria": "Guías y Ofertas",
-    "iconoCategoria": "fa-gem",
-    "resumen": "Desglosamos todas las recompensas, skins y libros mágicos de la temporada actual para saber si realmente conviene comprarlo.",
-    "imagen": "https://i.ytimg.com/vi/c4Et47zaPcs/maxresdefault.jpg",
-    "tiempoLectura": "4 min",
-    "url": "pase-de-oro-guia"
-  },
-  {
-    "id": "solucionar-lag-coc",
-    "titulo": "Cómo Solucionar el Lag y Cierres Inesperados en Clash of Clans",
-    "categoria": "Tutoriales Técnicos",
-    "iconoCategoria": "fa-wrench",
-    "resumen": "Aumenta los FPS y soluciona problemas de conexión o cierres del juego en Android, iOS y emuladores con estos sencillos ajustes.",
-    "imagen": "https://i.ytimg.com/vi/sDfmUlwb2_o/maxresdefault.jpg",
-    "tiempoLectura": "6 min",
-    "url": "solucionar-lag-coc"
-  },
-  {
-    "id": "proxima-actualizacion-coc",
-    "titulo": "Todo sobre la Próxima Actualización: Rumores y Sneak Peeks",
-    "categoria": "Novedades CoC",
-    "iconoCategoria": "fa-newspaper",
-    "resumen": "Recopilamos todas las filtraciones, nuevos niveles de defensas y cambios de balance confirmados por Supercell para este mes.",
-    "imagen": "https://i.ytimg.com/vi/mvXaQhfyfs0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCVEKO4wC0Ilanyn9IWRtUK4Ti2xA",
-    "tiempoLectura": "5 min",
-    "url": "proxima-actualizacion-coc"
   }
 ]
